@@ -1,0 +1,24 @@
+import sys
+
+data = sys.stdin.read().split()
+idx = 0
+
+t = int(data[idx])
+idx += 1
+
+for _ in range(t):
+    n = int(data[idx])
+    idx += 1
+
+    a = list(map(int, data[idx:idx+n]))
+    idx += n
+
+    a.sort()
+    mx = a[-1]
+    mn = a[0]
+
+    if mx == mn:
+        print("NO")
+    else:
+        print("YES")
+        print(mx, *a[:-1])
