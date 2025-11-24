@@ -1,0 +1,13 @@
+import sys
+
+data = sys.stdin.read().split()
+idx = 0
+
+def check(x):
+    d = 0
+    z = 0
+    while x:
+        if x % 10 == 0:
+            z += 1
+        d += 1
+        x //= 10
