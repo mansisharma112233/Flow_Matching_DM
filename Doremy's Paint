@@ -1,0 +1,22 @@
+def solve():
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        a = list(map(int, input().split()))
+
+        freq = {}
+        for x in a:
+            freq[x] = freq.get(x, 0) + 1
+
+        if len(freq) >= 3:
+            print("No")
+        else:
+            freq_vals = sorted(freq.values())
+            f1, f2 = freq_vals[0], freq_vals[-1]
+
+            if f1 == f2:
+                print("Yes")
+            elif n % 2 == 1 and abs(f1 - f2) == 1:
+                print("Yes")
+            else:
+                print("No")
