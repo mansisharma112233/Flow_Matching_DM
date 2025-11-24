@@ -1,0 +1,23 @@
+def solve():
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        s = input()
+
+        continuous = False
+        empty = 0
+
+        for i in range(n):
+            if i + 2 < n and s[i] == '.' and s[i+1] == '.' and s[i+2] == '.':
+                continuous = True
+                break
+            if s[i] == '.':
+                empty += 1
+
+        if continuous:
+            print(2)
+        else:
+            print(empty)
+
+if __name__ == "__main__":
+    solve()
